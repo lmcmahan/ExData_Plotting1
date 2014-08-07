@@ -6,9 +6,9 @@ data <- read.csv.sql("household_power_consumption.txt", sep=";", header=TRUE, sq
 
 # Change the Date variable to Date plus Time format
 data$Date <- strptime(paste(data$Date,data$Time), "%d/%m/%Y %H:%M:%S")
-plot(data$Date, data$Sub_metering_1, type="n", xlab="", ylab="Energy sub metering")
 
 # Plot and annotate a single scatterplot containing 3 groups of energy sub metering for plot 3
+plot(data$Date, data$Sub_metering_1, type="n", xlab="", ylab="Energy sub metering")
 lines(data$Date, data$Sub_metering_1, col="black")
 lines(data$Date, data$Sub_metering_2, col="red")
 lines(data$Date, data$Sub_metering_3, col="blue")
